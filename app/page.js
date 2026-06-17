@@ -1,7 +1,6 @@
     "use client";
 
-
-export default function Home() {
+export default function Page() {
   const drinks = [
     {
       id: 1,
