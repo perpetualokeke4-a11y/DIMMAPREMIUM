@@ -117,7 +117,8 @@ Price: ${price}
       {/* Hero Section */}
       <section style={styles.hero}>
         <div>
-          <h1 style={styles.heroTitle}>Tigernut Drinks</h1>
+          <h1 style={styles.heroTitle}>DIMMAPREMIUM</h1>
+          <h4 style={styles.heroTitle}>Tigernut Drinks</h4>
 
           <p style={styles.heroText}>
             Fresh, creamy and delicious drinks for every occasion.
@@ -125,7 +126,7 @@ Price: ${price}
 
           <button
             style={styles.button}
-           onClick={() => orderDrink(drinkName, price)}
+            onClick={() => orderDrink("Classic Tiger Milk (Small, Large)", "₦1000, ₦2000")}
           >
             Order Now
           </button>
