@@ -1,6 +1,23 @@
-  "use client";
+    "use client";
+
+import { useEffect, useState } from "react";
 
 export default function HomePage() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    handleResize(); // check once when page loads
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+
+
   const drinks = [
     {
       id: 1,
@@ -26,9 +43,9 @@ export default function HomePage() {
     
 
    hero: {
-  height: "100vh",
+  height: isMobile ? "80vh" : "100vh",
   backgroundImage:
-    "linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/bg.jpg')",
+  "linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('/bg.jpg')",
   backgroundSize: "cover",
   backgroundPosition: "center",
   color: "white",
@@ -36,23 +53,25 @@ export default function HomePage() {
   justifyContent: "center",
   alignItems: "center",
   textAlign: "center",
-  padding: "20px",
+  padding: isMobile ? "15px" : "20px",
 },
 
 
   heroTitle: {
-  fontSize: "5rem",
+  fontSize: isMobile ? "2.8rem" : "5rem",
   fontWeight: "900",
   marginBottom: "20px",
 },
 
     heroText: {
-      fontSize: "1.3rem",
+      fontSize: isMobile ? "1rem" : "1.3rem",
       marginBottom: "20px",
     },
 
     button: {
-      padding: "12px 25px",
+      padding: isMobile ? "12px 20px" : "15px 35px",
+fontSize: isMobile ? "1rem" : "1.2rem",
+fontWeight: "bold",
       background: "#f1a708",
       color: "white",
       border: "none",
@@ -67,7 +86,9 @@ export default function HomePage() {
 
     products: {
       display: "grid",
-      gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
+      gridTemplateColumns: isMobile
+  ? "1fr"
+  : "repeat(auto-fit, minmax(320px, 1fr))",
       gap: "20px",
       marginTop: "30px",
     },
@@ -82,7 +103,7 @@ export default function HomePage() {
 
     image: {
       width: "100%",
-      height: "250px",
+      height: isMobile ? "220px" : "350px",
       objectFit: "cover",
     },
 
@@ -118,21 +139,32 @@ Price: ${price}
       {/* Hero Section */}
       <section style={styles.hero}>
         <div>
-          <h1 style={styles.heroTitle}>DIMMAPREMIUM</h1>
-          <h4 style={styles.heroTitle}>Tigernut Drinks</h4>
+          <h1
+  style={{
+    ...styles.heroTitle,
+    marginBottom: "5px",
+  }}
+>
+  DIMMAPREMIUM
+</h1>
+
+<h2
+  style={{
+    fontSize: "4rem",
+    fontWeight: "900",
+    marginTop: "0",
+    color: "#FFD54F",
+  }}
+>
+  Tigernut Drinks
+</h2>
 
           <p style={styles.heroText}>
             Fresh, creamy and delicious drinks for every occasion.
           </p>
 
-          <button
-            style={styles.button}
-            onClick={() => orderDrink("Classic Tiger Milk (Small, Large)", "₦1000, ₦2000")}
-          >
-            Order Now
-          </button>
         </div>
-      </section>zz
+      </section>
 
       {/* About Section */}
       <section style={styles.section}>
@@ -300,7 +332,8 @@ Price: ${price}
           type="text"
           placeholder="Your Name"
           style={{
-            width: "300px",
+            width: isMobile ? "100%" : "400px",
+maxWidth: "400px",
             padding: "10px",
             marginBottom: "10px",
           }}
