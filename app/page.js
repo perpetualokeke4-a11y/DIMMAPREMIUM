@@ -21,13 +21,13 @@ export default function HomePage() {
   const drinks = [
     {
       id: 1,
-      name: "Classic Tiger Milk(Small bottle 35cl)",
+      name: "Classic Tigernut(Small bottle 35cl)",
       price: "₦1000",
       image: "https://media.istockphoto.com/id/928466276/photo/tiger-nut-milk-tigernut-horchata.jpg?s=612x612&w=0&k=20&c=d90jCfKi3QkSvPGztHJNaYtUfx6itXUy7CHDXSYIy1M=",
     },
     {
         id: 2,
-        name: "Classic Tiger Milk(Big bottle 50cl)",
+        name: "Classic Tigernut(Big bottle 50cl)",
         price: "₦2000",
         image: "https://media.istockphoto.com/id/510958514/photo/horchata.jpg?s=612x612&w=0&k=20&c=Q6l1SktkBhKLAsEWaKYILu967ivF0rL32OhY3CqjEsc=",
     }
