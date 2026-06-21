@@ -145,7 +145,7 @@ Price: ${price}
     marginBottom: "5px",
   }}
 >
-  DIMMAPREMIUM
+  DIMMAPREMIUM's
 </h1>
 
 <h2
