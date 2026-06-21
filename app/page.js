@@ -188,7 +188,7 @@ Price: ${price}
     margin: "0 auto",
   }}
 >
-  We make premium Tiger Milk drinks using the finest ingredients and
+  We make premium Tigernut drinks using the finest ingredients and
   flavors.
 </p>
       </section>
