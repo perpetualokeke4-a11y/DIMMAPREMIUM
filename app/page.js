@@ -58,7 +58,7 @@ export default function HomePage() {
 
 
   heroTitle: {
-  fontSize: isMobile ? "2.8rem" : "5rem",
+  fontSize: isMobile ? "2.5rem" : "5rem",
   fontWeight: "900",
   marginBottom: "20px",
 },
@@ -150,7 +150,7 @@ Price: ${price}
 
 <h2
   style={{
-    fontSize: "4rem",
+    fontSize: "1.5rem",
     fontWeight: "900",
     marginTop: "0",
     color: "#FFD54F",
