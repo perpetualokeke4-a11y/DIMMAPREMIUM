@@ -57,10 +57,11 @@ export default function HomePage() {
 },
 
 
-  heroTitle: {
-  fontSize: isMobile ? "2.5rem" : "5rem",
+ heroTitle: {
+  fontSize: isMobile ? "2.2rem" : "5rem",
   fontWeight: "900",
-  marginBottom: "20px",
+  marginBottom: isMobile ? "10px" : "20px",
+  lineHeight: "1.1",
 },
 
     heroText: {
@@ -142,7 +143,9 @@ Price: ${price}
           <h1
   style={{
     ...styles.heroTitle,
-    marginBottom: "5px",
+     maxWidth: "800px",
+      width: "100%",
+      padding: isMobile ? "10px" : "20px",
   }}
 >
   DIMMAPREMIUM's
@@ -150,10 +153,11 @@ Price: ${price}
 
 <h2
   style={{
-    fontSize: "1.5rem",
+    fontSize: isMobile ? "2rem" :"3.5rem",
     fontWeight: "900",
     marginTop: "0",
     color: "#FFD54F",
+     lineHeight: "1.2",
   }}
 >
   Tigernut Drinks
